@@ -1,6 +1,6 @@
 import { useRef } from 'react'
 import Header from '../components/Header'
-import ServiceCard from '../components/ServiceCard'
+// import ServiceCard from '../components/ServiceCard'
 import Socials from '../components/Socials'
 import WorkCard from '../components/WorkCard'
 import { useIsomorphicLayoutEffect } from '../utils'
@@ -10,6 +10,8 @@ import Head from 'next/head'
 import Button from '../components/Button'
 import Link from 'next/link'
 import Cursor from '../components/Cursor'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 // Local Data
 import data from '../data/portfolio.json'
@@ -50,6 +52,7 @@ export default function Home() {
 
   return (
     <div className={`relative ${data.showCursor && 'cursor-none'}`}>
+      <ToastContainer />
       {data.showCursor && <Cursor />}
       <Head>
         <title>{data.name}</title>
