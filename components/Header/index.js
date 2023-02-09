@@ -92,11 +92,11 @@ const Header = ({
                     </Button>
                   )}
 
-                  <Button
+                  {/* <Button
                     onClick={() => window.open('mailto:hello@chetanverma.com')}
                   >
                     Contact
-                  </Button>
+                  </Button> */}
                 </div>
               ) : (
                 <div className='grid grid-cols-1'>
@@ -117,11 +117,11 @@ const Header = ({
                     </Button>
                   )}
 
-                  <Button
+                  {/* <Button
                     onClick={() => window.open('mailto:hello@chetanverma.com')}
                   >
                     Contact
-                  </Button>
+                  </Button> */}
                 </div>
               )}
             </Popover.Panel>
@@ -156,9 +156,9 @@ const Header = ({
               </Button>
             )}
 
-            <Button onClick={() => window.open('mailto:hello@chetanverma.com')}>
+            {/* <Button onClick={() => window.open('mailto:hello@chetanverma.com')}>
               Contact
-            </Button>
+            </Button> */}
             {mounted && theme && data.darkMode && (
               <Button
                 onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
@@ -185,9 +185,9 @@ const Header = ({
               </Button>
             )}
 
-            <Button onClick={() => window.open('mailto:hello@chetanverma.com')}>
+            {/* <Button onClick={() => window.open('mailto:hello@chetanverma.com')}>
               Contact
-            </Button>
+            </Button> */}
 
             {mounted && theme && data.darkMode && (
               <Button

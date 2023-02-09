@@ -5,6 +5,8 @@ import Header from '../components/Header'
 import ProjectResume from '../components/ProjectResume'
 import Socials from '../components/Socials'
 import Button from '../components/Button'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 import { useTheme } from 'next-themes'
 // Data
 import { name, showResume } from '../data/portfolio.json'
@@ -38,6 +40,7 @@ const Resume = () => {
         }`}
       >
         <Header isBlog />
+        <ToastContainer />
         {mount && (
           <div className='mt-10 w-full flex flex-col items-center'>
             <div
