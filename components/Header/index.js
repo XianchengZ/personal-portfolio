@@ -6,7 +6,12 @@ import Button from '../Button'
 // Local Data
 import data from '../../data/portfolio.json'
 
-const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
+const Header = ({
+  handleWorkScroll,
+  handleProjectScroll,
+  handleAboutScroll,
+  isBlog,
+}) => {
   const router = useRouter()
   const { theme, setTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
@@ -71,9 +76,12 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
                 <div className='grid grid-cols-1'>
                   <Button onClick={handleAboutScroll}>About</Button>
                   <Button onClick={handleWorkScroll}>Work</Button>
-                  {showBlog && (
-                    <Button onClick={() => router.push('/blog')}>Blog</Button>
-                  )}
+                  <Button onClick={handleProjectScroll}>Project</Button>
+                  {/* {showBlog && (
+                    <Button onClick={() => router.push('/projects')}>
+                      projects
+                    </Button>
+                  )} */}
                   {showResume && (
                     <Button
                       onClick={() =>
@@ -95,9 +103,11 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
                   <Button onClick={() => router.push('/')} classes='first:ml-1'>
                     Home
                   </Button>
-                  {showBlog && (
-                    <Button onClick={() => router.push('/blog')}>Blog</Button>
-                  )}
+                  {/* {showBlog && (
+                    <Button onClick={() => router.push('/projects')}>
+                      projects
+                    </Button>
+                  )} */}
                   {showResume && (
                     <Button
                       onClick={() => router.push('/resume')}
@@ -132,10 +142,11 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
         {!isBlog ? (
           <div className='flex'>
             <Button onClick={handleAboutScroll}>About</Button>
-            <Button onClick={handleWorkScroll}>Work</Button>
-            {showBlog && (
-              <Button onClick={() => router.push('/blog')}>Blog</Button>
-            )}
+            <Button onClick={handleWorkScroll}>Works</Button>
+            <Button onClick={handleProjectScroll}>Projects</Button>
+            {/* {showBlog && (
+              <Button onClick={() => router.push('/projects')}>projects</Button>
+            )} */}
             {showResume && (
               <Button
                 onClick={() => router.push('/resume')}
@@ -162,9 +173,9 @@ const Header = ({ handleWorkScroll, handleAboutScroll, isBlog }) => {
         ) : (
           <div className='flex'>
             <Button onClick={() => router.push('/')}>Home</Button>
-            {showBlog && (
-              <Button onClick={() => router.push('/blog')}>Blog</Button>
-            )}
+            {/* {showBlog && (
+              <Button onClick={() => router.push('/projects')}>projects</Button>
+            )} */}
             {showResume && (
               <Button
                 onClick={() => router.push('/resume')}
