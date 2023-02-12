@@ -1,9 +1,10 @@
-import { useRef } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import Header from '../components/Header'
+import Router, { useRouter } from 'next/router'
 // import ServiceCard from '../components/ServiceCard'
 import Socials from '../components/Socials'
-import WorkCard from '../components/WorkCard'
-import { useIsomorphicLayoutEffect } from '../utils'
+// import WorkCard from '../components/WorkCard'
+import { useIsomorphicLayoutEffect, ISOToDate } from '../utils'
 import { stagger } from '../animations'
 import Footer from '../components/Footer'
 import Head from 'next/head'
@@ -14,10 +15,11 @@ import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import WorkExperience from '../components/WorkExperience'
 
+import { getAllPosts } from '../utils/api'
 // Local Data
 import data from '../data/portfolio.json'
 
-export default function Home() {
+export default function Home({ posts }) {
   // Ref
   const workRef = useRef()
   const aboutRef = useRef()
@@ -26,6 +28,9 @@ export default function Home() {
   const textTwo = useRef()
   const textThree = useRef()
   const textFour = useRef()
+
+  const router = useRouter()
+  const [mounted, setMounted] = useState(false)
 
   // Handling Scroll
   const handleWorkScroll = () => {
@@ -59,6 +64,42 @@ export default function Home() {
       { y: 0, x: 0, transform: 'scale(1)' }
     )
   }, [])
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+  const createBlog = () => {
+    if (process.env.NODE_ENV === 'development') {
+      fetch('/api/projects', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      }).then(() => {
+        router.reload(window.location.pathname)
+      })
+    } else {
+      alert('This thing only works in development mode.')
+    }
+  }
+
+  const deleteBlog = (slug) => {
+    if (process.env.NODE_ENV === 'development') {
+      fetch('/api/projects', {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          slug,
+        }),
+      }).then(() => {
+        router.reload(window.location.pathname)
+      })
+    } else {
+      alert('This thing only works in development mode.')
+    }
+  }
 
   return (
     <div className={`relative ${data.showCursor && 'cursor-none'}`}>
@@ -133,18 +174,41 @@ export default function Home() {
           <div className='mt-5 laptop:mt-10 grid grid-cols-1 tablet:grid-cols-2 gap-4'></div>
         </div>
         <div className='mt-10 laptop:mt-30 p-2 laptop:p-0' ref={projectRef}>
-          <h1 className='text-2xl text-bold'>Projects.</h1>
+          <h1 className='text-2xl text-bold'>Projects & Design Docs.</h1>
 
           <div className='mt-5 laptop:mt-10 grid grid-cols-1 tablet:grid-cols-2 gap-4'>
-            {data.projects.map((project) => (
-              <WorkCard
-                key={project.id}
-                img={project.imageSrc}
-                name={project.title}
-                description={project.description}
-                onClick={() => window.open(`/projects/firstblog`, '_self')}
-              />
-            ))}
+            {posts &&
+              posts.map((post) => (
+                <div
+                  className='cursor-pointer relative'
+                  key={post.slug}
+                  onClick={() => Router.push(`/projects/${post.slug}`)}
+                >
+                  <img
+                    className='w-full h-60 rounded-lg shadow-lg object-cover'
+                    src={post.image}
+                    alt={post.title}
+                  ></img>
+                  <h2 className='mt-5 text-4xl'>{post.title}</h2>
+                  <p className='mt-2 opacity-50 text-lg'>{post.preview}</p>
+                  <span className='text-sm mt-5 opacity-25'>
+                    {ISOToDate(post.date)}
+                  </span>
+                  {process.env.NODE_ENV === 'development' && mounted && (
+                    <div className='absolute top-0 right-0'>
+                      <Button
+                        onClick={(e) => {
+                          deleteBlog(post.slug)
+                          e.stopPropagation()
+                        }}
+                        type={'primary'}
+                      >
+                        Delete
+                      </Button>
+                    </div>
+                  )}
+                </div>
+              ))}
           </div>
         </div>
 
@@ -160,4 +224,21 @@ export default function Home() {
       </div>
     </div>
   )
+}
+
+export async function getStaticProps() {
+  const posts = getAllPosts([
+    'slug',
+    'title',
+    'image',
+    'preview',
+    'author',
+    'date',
+  ])
+
+  return {
+    props: {
+      posts: [...posts],
+    },
+  }
 }

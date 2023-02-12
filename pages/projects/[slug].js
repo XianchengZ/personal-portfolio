@@ -12,15 +12,11 @@ import { useRouter } from 'next/router'
 import Cursor from '../../components/Cursor'
 import data from '../../data/portfolio.json'
 
-import ReactMarkdown from 'react-markdown'
-
-const BlogPost = async ({ post }) => {
+const BlogPost = ({ post }) => {
   const [showEditor, setShowEditor] = useState(false)
   const textOne = useRef()
   const textTwo = useRef()
   const router = useRouter()
-  // const response = await fetch('../../data/test.md')
-  // console.log(response)
 
   useIsomorphicLayoutEffect(() => {
     stagger([textOne.current, textTwo.current], { y: 30 }, { y: 0 })
@@ -50,7 +46,6 @@ const BlogPost = async ({ post }) => {
             ref={textOne}
             className='mt-10 text-4xl mob:text-2xl laptop:text-6xl text-bold'
           >
-            <ReactMarkdown children={'../../data/test.md'}></ReactMarkdown>
             {post.title}
           </h1>
           <h2
