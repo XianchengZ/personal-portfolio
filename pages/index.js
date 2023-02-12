@@ -118,7 +118,7 @@ export default function Home({ posts }) {
           handleAboutScroll={handleAboutScroll}
           handleWorkScroll={handleWorkScroll}
         />
-        <div className='laptop:mt-20 mt-10'>
+        <div className='laptop:mt-20 mt-10 p-10'>
           <div className='mt-5'>
             <h1
               ref={textOne}
@@ -149,14 +149,14 @@ export default function Home({ posts }) {
           <Socials className='mt-2 laptop:mt-5' />
         </div>
 
-        <div className='mt-10 laptop:mt-40 p-2 laptop:p-0' ref={aboutRef}>
+        <div className='mt-10 laptop:mt-40 p-2 laptop:p-10' ref={aboutRef}>
           {/* <h1 className='tablet:m-10 text-2xl text-bold'>About.</h1> */}
           <h1 className='text-2xl text-bold'>About.</h1>
           <p className='tablet:m-10 mt-2 text-xl laptop:text-3xl w-full laptop:w-3/5'>
             {data.aboutpara}
           </p>
         </div>
-        <div className='mt-10 laptop:mt-30 p-2 laptop:p-0' ref={workRef}>
+        <div className='mt-10 laptop:mt-30 p-2 laptop:p-10' ref={workRef}>
           <h1 className='text-2xl text-bold'>Work.</h1>
           {data.resume.experiences.map((experience) => (
             <>
@@ -173,7 +173,7 @@ export default function Home({ posts }) {
 
           <div className='mt-5 laptop:mt-10 grid grid-cols-1 tablet:grid-cols-2 gap-4'></div>
         </div>
-        <div className='mt-10 laptop:mt-30 p-2 laptop:p-0' ref={projectRef}>
+        <div className='mt-10 laptop:mt-30 p-2 laptop:p-10' ref={projectRef}>
           <h1 className='text-2xl text-bold'>Projects & Design Docs.</h1>
 
           <div className='mt-5 laptop:mt-10 grid grid-cols-1 tablet:grid-cols-2 gap-4'>
@@ -210,6 +210,7 @@ export default function Home({ posts }) {
                 </div>
               ))}
           </div>
+          <Footer />
         </div>
 
         {/* This button should not go into production */}
@@ -220,7 +221,6 @@ export default function Home({ posts }) {
             </Link>
           </div>
         )}
-        <Footer />
       </div>
     </div>
   )
