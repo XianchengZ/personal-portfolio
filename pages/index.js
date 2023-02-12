@@ -68,20 +68,20 @@ export default function Home({ posts }) {
   useEffect(() => {
     setMounted(true)
   }, [])
-  const createBlog = () => {
-    if (process.env.NODE_ENV === 'development') {
-      fetch('/api/projects', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      }).then(() => {
-        router.reload(window.location.pathname)
-      })
-    } else {
-      alert('This thing only works in development mode.')
-    }
-  }
+  // const createBlog = () => {
+  //   if (process.env.NODE_ENV === 'development') {
+  //     fetch('/api/projects', {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //     }).then(() => {
+  //       router.reload(window.location.pathname)
+  //     })
+  //   } else {
+  //     alert('This thing only works in development mode.')
+  //   }
+  // }
 
   const deleteBlog = (slug) => {
     if (process.env.NODE_ENV === 'development') {
