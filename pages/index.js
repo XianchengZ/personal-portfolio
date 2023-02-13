@@ -1,16 +1,15 @@
 import { useRef, useState, useEffect } from 'react'
 import Header from '../components/Header'
 import Router, { useRouter } from 'next/router'
-// import ServiceCard from '../components/ServiceCard'
 import Socials from '../components/Socials'
-// import WorkCard from '../components/WorkCard'
 import { useIsomorphicLayoutEffect, ISOToDate } from '../utils'
 import { stagger } from '../animations'
 import Footer from '../components/Footer'
 import Head from 'next/head'
 import Button from '../components/Button'
 import Link from 'next/link'
-import Cursor from '../components/Cursor'
+// import Cursor from '../components/Cursor'
+import Skills from '../components/Skills'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import WorkExperience from '../components/WorkExperience'
@@ -68,20 +67,6 @@ export default function Home({ posts }) {
   useEffect(() => {
     setMounted(true)
   }, [])
-  // const createBlog = () => {
-  //   if (process.env.NODE_ENV === 'development') {
-  //     fetch('/api/projects', {
-  //       method: 'POST',
-  //       headers: {
-  //         'Content-Type': 'application/json',
-  //       },
-  //     }).then(() => {
-  //       router.reload(window.location.pathname)
-  //     })
-  //   } else {
-  //     alert('This thing only works in development mode.')
-  //   }
-  // }
 
   const deleteBlog = (slug) => {
     if (process.env.NODE_ENV === 'development') {
@@ -102,9 +87,10 @@ export default function Home({ posts }) {
   }
 
   return (
-    <div className={`relative ${data.showCursor && 'cursor-none'}`}>
+    <div className={`relative`}>
+      {/* <div className={`relative ${data.showCursor && 'cursor-none'}`}> */}
       <ToastContainer />
-      {data.showCursor && <Cursor />}
+      {/* {data.showCursor && <Cursor />} */}
       <Head>
         <title>{data.name}</title>
       </Head>
@@ -149,13 +135,18 @@ export default function Home({ posts }) {
           <Socials className='mt-2 laptop:mt-5' />
         </div>
 
-        <div className='mt-10 laptop:mt-40 p-2 laptop:p-10' ref={aboutRef}>
-          {/* <h1 className='tablet:m-10 text-2xl text-bold'>About.</h1> */}
+        <div className='mt-10 laptop:mt-10 p-2 laptop:p-10' ref={aboutRef}>
           <h1 className='text-2xl text-bold'>About.</h1>
           <p className='tablet:m-10 mt-2 text-xl laptop:text-3xl w-full laptop:w-3/5'>
             {data.aboutpara}
           </p>
         </div>
+
+        <div className='mt-10 laptop:mt-10 p-2 laptop:p-10'>
+          <h1 className='text-2xl text-bold'>Skills.</h1>
+          <Skills />
+        </div>
+
         <div className='mt-10 laptop:mt-30 p-2 laptop:p-10' ref={workRef}>
           <h1 className='text-2xl text-bold'>Work.</h1>
           {data.resume.experiences.map((experience) => (
@@ -180,7 +171,7 @@ export default function Home({ posts }) {
             {posts &&
               posts.map((post) => (
                 <div
-                  className='cursor-pointer relative'
+                  className='cursor-pointer relative hover:scale-105 active:scale-100  transition-all ease-out duration-300'
                   key={post.slug}
                   onClick={() => Router.push(`/projects/${post.slug}`)}
                 >
