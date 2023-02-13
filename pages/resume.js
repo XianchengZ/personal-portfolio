@@ -8,6 +8,8 @@ import Button from '../components/Button'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { useTheme } from 'next-themes'
+// import { Document, Page } from 'react-pdf'
+
 // Data
 import { name, showResume } from '../data/portfolio.json'
 import { resume } from '../data/portfolio.json'
@@ -24,6 +26,15 @@ const Resume = () => {
       router.push('/')
     }
   }, [])
+
+  // const [numPages, setNumPages] = useState(null)
+  // const [pageNumber, setPageNumber] = useState(1) //setting 1 to show fisrt page
+
+  // function onDocumentLoadSuccess({ numPages }) {
+  //   setNumPages(numPages)
+  //   setPageNumber(1)
+  // }
+
   return (
     <>
       {process.env.NODE_ENV === 'development' && (
@@ -52,7 +63,9 @@ const Resume = () => {
                 <Button
                   type={'primary'}
                   onClick={() => {
-                    window.open('/')
+                    window.open(
+                      'https://d3us96m5nk8oz0.cloudfront.net/andrew_z_resume_scholarship.pdf'
+                    )
                   }}
                 >
                   View PDF Version
