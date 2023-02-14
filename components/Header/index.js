@@ -22,6 +22,9 @@ const Header = ({
     setMounted(true)
   }, [])
 
+  const resumeUrl =
+    'https://d3us96m5nk8oz0.cloudfront.net/andrew_z_resume_scholarship.pdf'
+
   return (
     <>
       <Popover className='block tablet:hidden mt-5'>
@@ -110,7 +113,7 @@ const Header = ({
                   )} */}
                   {showResume && (
                     <Button
-                      onClick={() => router.push('/resume')}
+                      onClick={() => window.open(resumeUrl)}
                       classes='first:ml-1'
                     >
                       Resume
@@ -151,7 +154,7 @@ const Header = ({
             )} */}
             {showResume && (
               <Button
-                onClick={() => router.push('/resume')}
+                onClick={() => window.open(resumeUrl)}
                 classes='first:ml-1'
               >
                 Resume
@@ -180,7 +183,7 @@ const Header = ({
             )} */}
             {showResume && (
               <Button
-                onClick={() => router.push('/resume')}
+                onClick={() => window.open(resumeUrl)}
                 classes='first:ml-1'
               >
                 Resume
