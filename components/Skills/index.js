@@ -9,31 +9,31 @@ const Languages = [
     id: 1,
     name: 'Typescript',
     imageSrc: '/skills/typescript.svg',
-    href: '#',
+    href: 'https://www.typescriptlang.org/',
   },
   {
     id: 2,
     name: 'JavaScript',
     imageSrc: '/skills/javascript.svg',
-    href: '#',
+    href: 'https://www.javascript.com/',
   },
   {
     id: 3,
     name: 'C++',
     imageSrc: '/skills/c.svg',
-    href: '#',
+    href: 'https://cplusplus.com/',
   },
   {
     id: 4,
     name: 'Python',
     imageSrc: '/skills/python.svg',
-    href: '#',
+    href: 'https://www.python.org/',
   },
   {
     id: 5,
     name: 'Solidity',
     imageSrc: '/skills/eth.svg',
-    href: '#',
+    href: 'https://soliditylang.org/',
   },
 ]
 
@@ -42,31 +42,31 @@ const frameworks = [
     id: 1,
     name: 'React',
     imageSrc: '/skills/react.svg',
-    href: '#',
+    href: 'https://reactjs.org/',
   },
   {
     id: 2,
     name: 'NextJS',
     imageSrc: '/skills/nextjs2.svg',
-    href: '#',
+    href: 'https://nextjs.org/',
   },
   {
     id: 3,
     name: 'Redux',
     imageSrc: '/skills/redux.svg',
-    href: '#',
+    href: 'https://redux.js.org/',
   },
   {
     id: 4,
     name: 'ExpressJS',
     imageSrc: '/skills/expressjs.svg',
-    href: '#',
+    href: 'https://expressjs.com/',
   },
   {
     id: 5,
     name: 'socket.io',
     imageSrc: '/skills/Socket-io.svg',
-    href: '#',
+    href: 'https://socket.io/',
   },
 ]
 
@@ -75,49 +75,49 @@ const others = [
     id: 1,
     name: 'NodeJS',
     imageSrc: '/skills/nodejs.svg',
-    href: '#',
+    href: 'https://nodejs.org/en/',
   },
   {
     id: 2,
     name: 'MongoDB',
     imageSrc: '/skills/mongodb.svg',
-    href: '#',
+    href: 'https://www.mongodb.com/',
   },
   {
     id: 3,
     name: 'PostgreSQL',
     imageSrc: '/skills/postgresql.svg',
-    href: '#',
+    href: 'https://www.postgresql.org/',
   },
   {
     id: 4,
     name: 'GraphQL',
     imageSrc: '/skills/graphql.svg',
-    href: '#',
+    href: 'https://graphql.org/',
   },
   {
     id: 5,
     name: 'Docker',
     imageSrc: '/skills/docker.svg',
-    href: '#',
+    href: 'https://www.docker.com/',
   },
   {
     id: 6,
     name: 'Kubernetes',
     imageSrc: '/skills/k8s.svg',
-    href: '#',
+    href: 'https://kubernetes.io/',
   },
   {
     id: 7,
     name: 'Redis',
     imageSrc: '/skills/redis.svg',
-    href: '#',
+    href: 'https://redis.io/',
   },
   {
     id: 8,
     name: 'Nginx',
     imageSrc: '/skills/nginx.svg',
-    href: '#',
+    href: 'https://www.nginx.com/',
   },
 ]
 
@@ -137,7 +137,7 @@ export default function Skills() {
         hover:scale-105 active:scale-100 duration-300
         h-[100px] w-auto inline-block`}
           >
-            <a key={language.id} href={language.href}>
+            <a key={language.id} href={language.href} target='_blank'>
               <img
                 src={language.imageSrc}
                 alt={language.name}
@@ -159,7 +159,7 @@ export default function Skills() {
           hover:scale-105 active:scale-100 duration-300
           h-[100px] w-auto inline-block`}
           >
-            <a key={framework.id} href={framework.href}>
+            <a key={framework.id} href={framework.href} target='_blank'>
               <img
                 src={framework.imageSrc}
                 alt={framework.name}
@@ -181,7 +181,7 @@ export default function Skills() {
           hover:scale-105 active:scale-100 duration-300
           h-[100px] w-auto inline-block`}
           >
-            <a key={other.id} href={other.href}>
+            <a key={other.id} href={other.href} target='_blank'>
               <img
                 src={other.imageSrc}
                 alt={other.name}
