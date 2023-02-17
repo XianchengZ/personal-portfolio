@@ -57,21 +57,21 @@
         "dates": "January 2023 – April 2023",
         "type": "internship",
         "position": "Software Engineer at Simpplr",
-        "bullets": "Led two engineers, architected and built multiple microservices from scratch for supporting video from AWS, led to decrease in load time by 66% and saved million-dollar costs for the next 5 years •\tCreated video upload and process pipeline using NodeJS, AWS (S3, MediaConvert, Transcribe), Kafka •\tSet up Edge Lambda for fast authorization and hiding origins from clients to prevent malicious attacks •\tConfigured AWS (CloudFront) to serve videos to 1M+ active users with handling clients’ permissions •\tEstablished WebSocket between microservices to retrieve real-time update from AWS (CloudWatch, SNS) •\tBuilt CI/CD pipelines with Jenkins, orchestrated local and production setup with Docker and K8s from scratch"
+        "bullets": "Backend Development in Salesforce Core Team •\t Used: TypeScript, AWS (S3, CloudFront, SNS, CloudWatch, Lambda, MediaConvert, Transcribe), Apache Kafka, PostgreSQL"
       },
       {
         "id": "d495c23b-4f65-479a-9b8a-cfbc1c089725",
         "dates": "May 2022 – August 2022",
         "type": "internship",
         "position": "Software Engineer at SAP",
-        "bullets": "Implemented a back-end engine that delivers context-specific help to users directly from the platform • Architected backend communications between microservices with adapting different development stages of the application using Node.js, Express.js, Docker, K8s, Mocha, OpenAPI, Bash •\tEnhanced feature toggling and reduced creation of more than ten deliverables to one in CMS •\tDeveloped multiple reusable UI components with JavaScript and SAPUI5 (Angular), adjusted contents with different hyperscale cloud providers (AWS, Azure and GCP) •\tFixed ~10 bugs, wrote unit and component, increased code stability by 8%"
+        "bullets": "Full-Stack Development at Database Tooling Team •\t Used: JavaScript, SAPUI5 (Angular), Express, openAPI, Mocha, Docker, K8s, git"
       },
       {
         "id": "42cc6709-b20d-449a-82d3-7566bb81c61d",
         "dates": "September 2021 – December 2021",
         "type": "internship",
         "position": "Data Analyst At BMO",
-        "bullets": "Implemented two models for classifying issuer risk and potential future exposure data using Pandas and NumPy (Python), brought down a one-day process to five minutes •\tBuilt a fully automated web application with React and Python to improve counterparty information update process, transformed data to XML format and upload into an internal system •\tWrote SQL queries to pull out data from various database engines, wrangled and preprocessed data for analysis"
+        "bullets": "Data Modelling and Analytics in Market Risk - CCR Team  •\t Used: Python (Pandas, NumPy), React, SQL, VBA, bitbucket"
       }
     ],
     "education": {
