@@ -136,8 +136,14 @@ export default function Skills() {
         text-center content-center
         hover:scale-105 active:scale-100 duration-300
         h-[100px] w-auto inline-block`}
+            key={language.id}
           >
-            <a key={language.id} href={language.href} target='_blank'>
+            <a
+              key={language.id}
+              href={language.href}
+              target='_blank'
+              rel='noreferrer'
+            >
               <img
                 src={language.imageSrc}
                 alt={language.name}
@@ -158,8 +164,14 @@ export default function Skills() {
           text-center content-center
           hover:scale-105 active:scale-100 duration-300
           h-[100px] w-auto inline-block`}
+            key={framework.id}
           >
-            <a key={framework.id} href={framework.href} target='_blank'>
+            <a
+              key={framework.id}
+              href={framework.href}
+              target='_blank'
+              rel='noreferrer'
+            >
               <img
                 src={framework.imageSrc}
                 alt={framework.name}
@@ -180,8 +192,14 @@ export default function Skills() {
           text-center content-center
           hover:scale-105 active:scale-100 duration-300
           h-[100px] w-auto inline-block`}
+            key={other.id}
           >
-            <a key={other.id} href={other.href} target='_blank'>
+            <a
+              key={other.id}
+              href={other.href}
+              target='_blank'
+              rel='noreferrer'
+            >
               <img
                 src={other.imageSrc}
                 alt={other.name}
