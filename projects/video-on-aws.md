@@ -1,6 +1,6 @@
 ---
 date: '2023-02-17T11:50:54.000Z'
-title: Video On AWS Architecture
+title: Video Support From AWS Design Doc
 tagline: tagline
 preview: >-
   This is the video on AWS System Design from my previous internship
