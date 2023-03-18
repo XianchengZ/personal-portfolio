@@ -167,14 +167,15 @@ export default function Home({ posts }) {
         </div>
         <div className='mt-10 laptop:mt-30 p-2 laptop:p-10' ref={projectRef}>
           <h1 className='text-2xl text-bold'>Projects & Design Docs.</h1>
-          <h1 className='text-xl text-bold'>Coming soon...</h1>
-          {/* <div className='mt-5 laptop:mt-10 grid grid-cols-1 tablet:grid-cols-2 gap-4'>
-            {posts &&
-              posts.map((post) => (
+          {/* <h1 className='text-xl text-bold'>Coming soon...</h1> */}
+          <div className='mt-5 laptop:mt-10 grid grid-cols-1 tablet:grid-cols-2 gap-4'>
+            {data.projects &&
+              data.projects.map((post) => (
                 <div
                   className='cursor-pointer relative hover:scale-105 active:scale-100  transition-all ease-out duration-300'
                   key={post.slug}
-                  onClick={() => Router.push(`/projects/${post.slug}`)}
+                  // onClick={() => Router.push(`/projects/${post.slug}`)}
+                  onClick={() => window.open(post.link)}
                 >
                   <img
                     className='w-full h-60 rounded-lg shadow-lg object-cover'
@@ -201,7 +202,7 @@ export default function Home({ posts }) {
                   )}
                 </div>
               ))}
-          </div> */}
+          </div>
           <Footer />
         </div>
 

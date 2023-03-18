@@ -1,14 +1,14 @@
 ---
 date: '2023-02-17T11:50:54.000Z'
-title: Video Support From AWS Design Doc
-tagline: tagline
+title: Video From AWS Infrastructure Design Doc
 preview: >-
-  This is the video on AWS System Design from my previous internship
+  Video Service that leverages AWS Technologies
+
 image: >-
-  /projectImages/systemDesign.jpeg
+  /projectImages/videoPlayer.png
 ---
 
-![alt text](/projectImages/test.png)
+![alt text](/projectImages/workflow.png)
 
 # Heading One
 

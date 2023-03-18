@@ -16,15 +16,6 @@
       "link": "https://www.linkedin.com/in/xiancheng-andrew-zang-4178b61b5/"
     }
   ],
-  "projects": [
-    {
-      "id": "6",
-      "title": "Project Six",
-      "description": "Design & Development",
-      "imageSrc": "https://images.unsplash.com/photo-1517479149777-5f3b1511d5ad?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTAyfHxwYXN0ZWx8ZW58MHx8MHw%3D&auto=format&fit=crop&w=400&q=60",
-      "url": "http://chetanverma.com/"
-    }
-  ],
   "services": [
     {
       "id": "1",
@@ -82,5 +73,23 @@
     "languages": ["Javascript", "HTML5", "CSS", "Python", "Go"],
     "frameworks": ["React", "Typescript", "NodeJs"],
     "others": ["Figma", "AdobeXD", "AWS"]
-  }
+  },
+  "projects": [
+    {
+      "slug": "1",
+      "image": "/projectImages/videoPlayer.png",
+      "title": "Video From AWS Infrastructure Design Doc",
+      "preview": "Video Service that leverages AWS Technologies",
+      "date": "2023-3-18",
+      "link": "https://indecisive-gasoline-0e8.notion.site/Video-On-AWS-Design-Docs-45f4bb72fd854d1e94905cde8756f745"
+    },
+    {
+      "slug": "2",
+      "image": "/projectImages/helpDesk.jpeg",
+      "title": "Digital Support Center project",
+      "preview": "Full-stack Application provides supports to electronic products",
+      "date": "2022-12-01",
+      "link": "https://github.com/Zhongqi0402/Digital_Support_Center"
+    }
+  ]
 }
