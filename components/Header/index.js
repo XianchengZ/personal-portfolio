@@ -86,11 +86,7 @@ const Header = ({
                     </Button>
                   )} */}
                   {showResume && (
-                    <Button
-                      onClick={() =>
-                        window.open('mailto:hello@chetanverma.com')
-                      }
-                    >
+                    <Button onClick={() => window.open(resumeUrl)}>
                       Resume
                     </Button>
                   )}
