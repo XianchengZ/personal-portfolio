@@ -23,7 +23,7 @@ const Header = ({
   }, [])
 
   const resumeUrl =
-    'https://d3us96m5nk8oz0.cloudfront.net/andrew_z_resume_scholarship.pdf'
+    'https://d3us96m5nk8oz0.cloudfront.net/andrew_zang_resume_202303.pdf'
 
   return (
     <>
