@@ -5,6 +5,15 @@ const skillsData = {
   Frameworks: [],
   'Technologies/Tools': [],
 }
+const certificates = [
+  {
+    id: 1,
+    name: 'AWS SAA-C03',
+    imageSrc: '/skills/aws-cert.png',
+    href: 'https://www.credly.com/badges/11b6d13c-35ca-41fa-8877-f076a647152c/public_url',
+  },
+]
+
 const Languages = [
   {
     id: 1,
@@ -133,6 +142,37 @@ export default function Skills() {
   return (
     mounted && (
       <div className='px-4 mx-auto max-w-screen-md'>
+        <div className='max-w-lg mt-3 grid grid-cols-2 gap-5 '>
+          <p className='align-baseline mt-10 text-lg'>
+            I am a certified AWS Solution Architect - Associate
+          </p>
+          {certificates.map((language) => (
+            <div
+              className={`overflow-hidden rounded-lg shadow-2xl
+          ${theme === 'dark' ? 'bg-slate-600' : 'bg-slate-50'} 
+        pt-5 pb-0
+        text-center content-center
+        hover:scale-105 active:scale-100 duration-300
+        h-[200px] w-[200px] inline-block`}
+              key={language.id}
+            >
+              <a
+                key={language.id}
+                href={language.href}
+                target='_blank'
+                rel='noreferrer'
+              >
+                <img
+                  src={language.imageSrc}
+                  alt={language.name}
+                  className='w-3/4 h-3/4 object-cover mx-auto'
+                />
+                <p className='mt-2 align-baseline'>{language.name}</p>
+              </a>
+            </div>
+          ))}
+        </div>
+
         <p className='align-baseline mt-10 text-lg'>Languages:</p>
         <div className='max-w-lg mt-3 grid grid-cols-5 gap-5 '>
           {Languages.map((language) => (
