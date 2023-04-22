@@ -139,6 +139,27 @@ export default function Skills() {
     setMounted(true)
   }, [])
 
+  const gridClass = `max-w-lg mt-3 grid 
+  grid-cols-5 mob:grid-cols-2 tablet:grid-cols-5 laptop:grid-cols-5 gap-5`
+
+  const containerClass = `overflow-hidden rounded-lg shadow-2xl
+  ${theme === 'dark' ? 'bg-slate-600' : 'bg-slate-50'} 
+  laptop:pt-2 laptop:pb-2 
+  mob:pt-2 mob:pb-0
+  text-center content-center
+  hover:scale-105 active:scale-100 duration-300
+  h-[100px] 
+  laptop:w-auto 
+  tablet:w-auto 
+  mob:w-[100px]
+  inline-block`
+
+  const imageClass = `object-cover mx-auto
+  w-3/4 h-3/4
+  laptop:w-3/4 laptop:h-3/4 
+  mob:w-3/5 mob:h-3/5
+  `
+
   return (
     mounted && (
       <div className='px-4 mx-auto max-w-screen-md'>
@@ -150,7 +171,7 @@ export default function Skills() {
             <div
               className={`overflow-hidden rounded-lg shadow-2xl
           ${theme === 'dark' ? 'bg-slate-600' : 'bg-slate-50'} 
-        pt-5 pb-0
+        pt-2 pb-0
         text-center content-center
         hover:scale-105 active:scale-100 duration-300
         h-[200px] w-[200px] inline-block`}
@@ -174,17 +195,9 @@ export default function Skills() {
         </div>
 
         <p className='align-baseline mt-10 text-lg'>Languages:</p>
-        <div className='max-w-lg mt-3 grid grid-cols-5 gap-5 '>
+        <div className={gridClass}>
           {Languages.map((language) => (
-            <div
-              className={`overflow-hidden rounded-lg shadow-2xl
-          ${theme === 'dark' ? 'bg-slate-600' : 'bg-slate-50'} 
-        pt-2 pb-2 
-        text-center content-center
-        hover:scale-105 active:scale-100 duration-300
-        h-[100px] w-auto inline-block`}
-              key={language.id}
-            >
+            <div className={containerClass} key={language.id}>
               <a
                 key={language.id}
                 href={language.href}
@@ -194,7 +207,7 @@ export default function Skills() {
                 <img
                   src={language.imageSrc}
                   alt={language.name}
-                  className='w-3/4 h-3/4 object-cover mx-auto'
+                  className={imageClass}
                 />
                 <p className='mt-2 align-baseline'>{language.name}</p>
               </a>
@@ -202,17 +215,9 @@ export default function Skills() {
           ))}
         </div>
         <p className='align-baseline mt-10 text-lg'>Frameworks:</p>
-        <div className='max-w-lg mt-3 grid grid-cols-5 gap-5 '>
+        <div className={gridClass}>
           {frameworks.map((framework) => (
-            <div
-              className={`overflow-hidden rounded-lg shadow-2xl
-            ${theme === 'dark' ? 'bg-slate-600' : 'bg-slate-50'} 
-          pt-2 pb-2 
-          text-center content-center
-          hover:scale-105 active:scale-100 duration-300
-          h-[100px] w-auto inline-block`}
-              key={framework.id}
-            >
+            <div className={containerClass} key={framework.id}>
               <a
                 key={framework.id}
                 href={framework.href}
@@ -222,7 +227,7 @@ export default function Skills() {
                 <img
                   src={framework.imageSrc}
                   alt={framework.name}
-                  className='w-3/4 h-3/4 object-cover mx-auto'
+                  className={imageClass}
                 />
                 <p className='mt-2 align-baseline'>{framework.name}</p>
               </a>
@@ -230,17 +235,9 @@ export default function Skills() {
           ))}
         </div>
         <p className='align-baseline mt-10 text-lg'>Technologies:</p>
-        <div className='max-w-lg mt-3 grid grid-cols-5 gap-5 '>
+        <div className={gridClass}>
           {others.map((other) => (
-            <div
-              className={`overflow-hidden rounded-lg shadow-2xl
-            ${theme === 'dark' ? 'bg-slate-600' : 'bg-slate-50'} 
-          pt-2 pb-2 
-          text-center content-center
-          hover:scale-105 active:scale-100 duration-300
-          h-[100px] w-auto inline-block`}
-              key={other.id}
-            >
+            <div className={containerClass} key={other.id}>
               <a
                 key={other.id}
                 href={other.href}
@@ -250,7 +247,7 @@ export default function Skills() {
                 <img
                   src={other.imageSrc}
                   alt={other.name}
-                  className='w-3/4 h-3/4 object-cover mx-auto'
+                  className={imageClass}
                 />
                 <p className='mt-2 align-baseline'>{other.name}</p>
               </a>
