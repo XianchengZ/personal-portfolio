@@ -38,7 +38,7 @@
       "description": "We combine creative design and technical skills to build striking 3D visualisations that bring your project to life."
     }
   ],
-  "aboutpara": "My name is Xiancheng Zang, I go by Andrew. I'm currently a 3rd year student studying computer science and finance at the University of Waterloo.",
+  "aboutpara": "My name is Xiancheng Zang, I go by Andrew. I'm currently a 3rd year student studying computer science at the University of Waterloo.",
   "resume": {
     "tagline": "👋  I'm a software engineer, product designer.",
     "description": "I have delivered world-class user experiences to millions of people. Well-versed with React, Javascript, and most of the Web frameworks.",
@@ -48,7 +48,7 @@
         "dates": "January 2023 – April 2023",
         "type": "internship",
         "position": "Software Engineer at Simpplr",
-        "bullets": "Backend Development in Salesforce Core Team •\t Used: TypeScript, AWS (S3, CloudFront, SNS, CloudWatch, Lambda, MediaConvert, Transcribe), Apache Kafka, PostgreSQL"
+        "bullets": "Backend Development in Salesforce Core Team •\t Used: TypeScript, AWS (S3, CloudFront, SNS, MSK, ElastiCache, CloudWatch, Lambda, MediaConvert, Transcribe), Apache Kafka, PostgreSQL, Prisma"
       },
       {
         "id": "d495c23b-4f65-479a-9b8a-cfbc1c089725",
