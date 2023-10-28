@@ -15,11 +15,25 @@ const Header = ({
   const router = useRouter()
   const { theme, setTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
 
   const { name, showBlog, showResume } = data
 
   useEffect(() => {
     setMounted(true)
+  }, [])
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50) // Set to true when scrolled down 50px
+    }
+
+    // Add event listener
+    window.addEventListener('scroll', handleScroll)
+
+    // Clean up the event listener
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
   }, [])
 
   const resumeUrl =
@@ -33,7 +47,7 @@ const Header = ({
             <div className='flex items-center justify-between p-2 laptop:p-0'>
               <h1
                 onClick={() => router.push('/')}
-                className='font-medium p-2 laptop:p-0 link'
+                className='font-medium p-2 laptop:p-0 link ml-4'
               >
                 {name}.
               </h1>
@@ -80,33 +94,17 @@ const Header = ({
                   <Button onClick={handleAboutScroll}>About</Button>
                   <Button onClick={handleWorkScroll}>Work</Button>
                   <Button onClick={handleProjectScroll}>Project</Button>
-                  {/* {showBlog && (
-                    <Button onClick={() => router.push('/projects')}>
-                      projects
-                    </Button>
-                  )} */}
                   {showResume && (
                     <Button onClick={() => window.open(resumeUrl)}>
                       Resume
                     </Button>
                   )}
-
-                  {/* <Button
-                    onClick={() => window.open('mailto:hello@chetanverma.com')}
-                  >
-                    Contact
-                  </Button> */}
                 </div>
               ) : (
                 <div className='grid grid-cols-1'>
                   <Button onClick={() => router.push('/')} classes='first:ml-1'>
                     Home
                   </Button>
-                  {/* {showBlog && (
-                    <Button onClick={() => router.push('/projects')}>
-                      projects
-                    </Button>
-                  )} */}
                   {showResume && (
                     <Button
                       onClick={() => window.open(resumeUrl)}
@@ -115,26 +113,25 @@ const Header = ({
                       Resume
                     </Button>
                   )}
-
-                  {/* <Button
-                    onClick={() => window.open('mailto:hello@chetanverma.com')}
-                  >
-                    Contact
-                  </Button> */}
                 </div>
               )}
             </Popover.Panel>
           </>
         )}
       </Popover>
+
       <div
-        className={`mt-10 hidden flex-row items-center justify-between sticky ${
-          theme === 'light' && 'bg-white'
-        } dark:text-white top-0 z-10 tablet:flex`}
+        className={`mt-10 hidden flex-row items-center justify-between sticky top-0 z-10 tablet:flex ${
+          isScrolled
+            ? theme === 'dark'
+              ? 'bg-gradient-dark'
+              : 'bg-gradient'
+            : ''
+        }`}
       >
         <h1
           onClick={() => router.push('/')}
-          className='font-medium cursor-pointer mob:p-2 laptop:p-0'
+          className='font-medium cursor-pointer mob:p-2 laptop:p-0 ml-4'
         >
           {name}.
         </h1>
@@ -145,9 +142,6 @@ const Header = ({
             <Button onClick={handleProjectScroll}>
               Projects & Design Docs
             </Button>
-            {/* {showBlog && (
-              <Button onClick={() => router.push('/projects')}>projects</Button>
-            )} */}
             {showResume && (
               <Button
                 onClick={() => window.open(resumeUrl)}
@@ -156,10 +150,6 @@ const Header = ({
                 Resume
               </Button>
             )}
-
-            {/* <Button onClick={() => window.open('mailto:hello@chetanverma.com')}>
-              Contact
-            </Button> */}
             {mounted && theme && data.darkMode && (
               <Button
                 onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
@@ -174,9 +164,6 @@ const Header = ({
         ) : (
           <div className='flex'>
             <Button onClick={() => router.push('/')}>Home</Button>
-            {/* {showBlog && (
-              <Button onClick={() => router.push('/projects')}>projects</Button>
-            )} */}
             {showResume && (
               <Button
                 onClick={() => window.open(resumeUrl)}
@@ -185,10 +172,6 @@ const Header = ({
                 Resume
               </Button>
             )}
-
-            {/* <Button onClick={() => window.open('mailto:hello@chetanverma.com')}>
-              Contact
-            </Button> */}
 
             {mounted && theme && data.darkMode && (
               <Button

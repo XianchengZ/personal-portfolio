@@ -1,8 +1,8 @@
 {
   "name": "Andrew Zang",
-  "headerTaglineOne": "Hello 👋",
-  "headerTaglineTwo": "I'm Andrew Zang, a software engineer",
-  "headerTaglineThree": " based in Toronto, Ontario, CA.",
+  "headerTaglineOne": "Hello\nI'm Andrew Zang, a software engineer\n based in Toronto, Ontario, CA.",
+  "headerTaglineTwo": "",
+  "headerTaglineThree": "",
   "headerTaglineFour": "",
   "showCursor": false,
   "showBlog": true,
@@ -13,7 +13,7 @@
     {
       "id": "2",
       "title": "LinkedIn",
-      "link": "https://www.linkedin.com/in/xiancheng-andrew-zang-4178b61b5/"
+      "link": "https://www.linkedin.com/in/andrew-zang/"
     }
   ],
   "services": [
@@ -44,25 +44,46 @@
     "description": "I have delivered world-class user experiences to millions of people. Well-versed with React, Javascript, and most of the Web frameworks.",
     "experiences": [
       {
+        "id": "0",
+        "dates": "September 2023 – December 2023",
+        "type": "internship",
+        "position": "Data Engineer at Super",
+        "bullets": "Data Development in Data Platform Team •\t Used: Python, SQL, Snowflake, Airflow, DBT, Kubernetes, FiveTran",
+        "logo": "./workImages/super_logo.jpeg"
+      },
+      {
         "id": "1",
         "dates": "January 2023 – April 2023",
         "type": "internship",
         "position": "Software Engineer at Simpplr",
-        "bullets": "Backend Development in Salesforce Core Team •\t Used: TypeScript, AWS (S3, CloudFront, SNS, MSK, ElastiCache, CloudWatch, Lambda, MediaConvert, Transcribe), Apache Kafka, PostgreSQL, Prisma"
+        "bullets": "Backend Development in Salesforce Core Team •\t Used: TypeScript, AWS (S3, CloudFront, SNS, MSK, ElastiCache, CloudWatch, Lambda, MediaConvert, Transcribe), Apache Kafka, PostgreSQL, Prisma",
+        "logo": "./workImages/simpplr_logo.png"
       },
       {
         "id": "d495c23b-4f65-479a-9b8a-cfbc1c089725",
         "dates": "May 2022 – August 2022",
         "type": "internship",
         "position": "Software Engineer at SAP",
-        "bullets": "Full-Stack Development at Database Tooling Team •\t Used: JavaScript, SAPUI5 (Angular), Express, openAPI, Mocha, Docker, K8s, git"
+        "bullets": "Full-Stack Development at Database Tooling Team •\t Used: JavaScript, SAPUI5 (Angular), Express, openAPI, Mocha, Docker, K8s, git",
+        "logo": "./workImages/sap_logo.jpg"
       },
       {
         "id": "42cc6709-b20d-449a-82d3-7566bb81c61d",
         "dates": "September 2021 – December 2021",
         "type": "internship",
         "position": "Data Analyst At BMO",
-        "bullets": "Data Modelling and Analytics in Market Risk - CCR Team  •\t Used: Python (Pandas, NumPy), React, SQL, VBA, bitbucket"
+        "bullets": "Data Modelling and Analytics in Market Risk - CCR Team  •\t Used: Python (Pandas, NumPy), React, SQL, VBA, bitbucket",
+        "logo": "./workImages/bmo_logo.png"
+      }
+    ],
+    "research": [
+      {
+        "id": "225",
+        "dates": "May 2023 – August 2023",
+        "type": "Part-time",
+        "position": "Research Assistant (Computer Networks)",
+        "bullets": "Worked under Professor Mina Tahmasbi Arashloo.•\t Implemented QUIC transport protocol receiver's logic under modular transport model.•\t Used: C++, ns3",
+        "logo": "./workImages/uwaterloo.png"
       }
     ],
     "education": {
