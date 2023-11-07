@@ -138,9 +138,6 @@ export default function Home({ posts }) {
                   <br />
                 </>
               ))}
-            </div>
-
-            <div className='mt-10 laptop:mt-30 p-2 laptop:p-10' ref={workRef}>
               <h1 className='text-2xl text-bold'>Research Experience</h1>
 
               {data.resume.research.map((experience) => (
