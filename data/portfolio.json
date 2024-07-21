@@ -38,13 +38,21 @@
       "description": "We combine creative design and technical skills to build striking 3D visualisations that bring your project to life."
     }
   ],
-  "aboutpara": "My name is Xiancheng Zang, I go by Andrew. I'm currently a 3rd year student studying computer science at the University of Waterloo.",
+  "aboutpara": "My name is Xiancheng Zang, I go by Andrew. I'm currently a 4th year student studying computer science at the University of Waterloo. I am looking for new grad software positions.",
   "resume": {
     "tagline": "👋  I'm a software engineer, product designer.",
     "description": "I have delivered world-class user experiences to millions of people. Well-versed with React, Javascript, and most of the Web frameworks.",
     "experiences": [
       {
         "id": "0",
+        "dates": "May 2024 – December 2024",
+        "type": "internship",
+        "position": "Software Engineer at Waabi",
+        "bullets": "Full stack development in Tools Team to facilitate autonomous vehicles •\t Used: Go (Gin, Ent, Testify), Rust, TypeScript, Docker",
+        "logo": "./workImages/waabi_logo.jpeg"
+      },
+      {
+        "id": "1",
         "dates": "September 2023 – December 2023",
         "type": "internship",
         "position": "Data Engineer at Super",
@@ -52,7 +60,7 @@
         "logo": "./workImages/super_logo.jpeg"
       },
       {
-        "id": "1",
+        "id": "2",
         "dates": "January 2023 – April 2023",
         "type": "internship",
         "position": "Software Engineer at Simpplr",
@@ -102,7 +110,7 @@
       "title": "Video From AWS Infrastructure Design Doc",
       "preview": "Video Service that leverages AWS Technologies",
       "date": "2023-3-18",
-      "link": "https://indecisive-gasoline-0e8.notion.site/Video-On-AWS-Design-Docs-45f4bb72fd854d1e94905cde8756f745"
+      "link": "https://andrew-zang.notion.site/Video-On-AWS-Design-Docs-45f4bb72fd854d1e94905cde8756f745"
     },
     {
       "slug": "2",
